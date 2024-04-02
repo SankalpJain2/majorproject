@@ -3,18 +3,19 @@
         <div class="col-8 offset-2">
             <h3>Create a new Listing</h3>
             <br>
-    <form method="POST" action="/listings">
+    <form method="POST" action="/listings" novalidate class="needs-validation">
         <div class="mb-3">
             <lable for="title" class="form-label">Title</lable>
             <input name="listing[title]"
              placeholder="enter title" 
              type="text"
-             class="form-control"/>
+             class="form-control"
+             required/>
+             <div class="valid-feedback">Title looks good!</div>
         </div>
         <div class="mb-3">
             <lable for="description" class="form-label">Description</lable>
-            <textarea name="listing[description]"
-                      class="form-control">
+            <textarea name="listing[description]"class="form-control" required>
             </textarea>
         </div>
         <div class="mb-3">
@@ -29,15 +30,16 @@
             <lable for="price" class="form-label">Price</lable>
             <input name="listing[price]"
              placeholder="enter price"
-             type="number" 
-             class="form-control"/>
+             class="form-control" required/>
+             <div class="invalid-feedback">Please enter a valid price</div>
         </div>
         <div class="mb-3 col-md-8">
             <lable for="country" class="form-label">Country</lable>
             <input name="listing[country]" 
             placeholder="enter country" 
             type="text" 
-            class="form-control"/>
+            class="form-control" required/>
+            <div class="invalid-feedback">Please enter the country name </div>
         </div>
     </div>
         <div class="mb-3">
@@ -45,7 +47,9 @@
             <input name="listing[location]" 
             placeholder="enter location" 
             type="text" 
-            class="form-control"/>
+            class="form-control" required/>
+            <div class="invalid-feedback">Please enter the location</div>
+
         </div>
         
         <button class="btn btn-dark add-btn mt-3">Add</button>
