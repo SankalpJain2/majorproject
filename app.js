@@ -64,9 +64,6 @@ const sessionOptions = {
     },
 };
 
-// app.get("/",(req,res)=>{
-//     res.send("hello");
-// });
 
 
 app.use(session(sessionOptions));
